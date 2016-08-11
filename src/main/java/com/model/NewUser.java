@@ -3,6 +3,10 @@ package com.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
 import org.springframework.stereotype.Component;
 
 import com.sun.istack.internal.NotNull;
@@ -53,20 +57,21 @@ public class NewUser {
 	public void setAge(String age) {
 		this.age = age;
 	}
-		@NotNull
+		@NotEmpty(message="Name field is mandatory")
 		private String firstname;
 		@NotNull
 		private String lastname;
 		
 		@Id
-		@NotNull
+		@NotEmpty(message="Name field is mandatory")
 		private String email;
-		@NotNull
+		@Length(max=10,min=10,message="Phone number is not valid. Should be of length 10.")
+	    @NumberFormat(style= Style.NUMBER)
 		private String phonenumber;
-		@NotNull
+		@NotEmpty(message="Password field is mandatory")
 		private String password;
-		@NotNull
+		@NotEmpty(message="This field is mandatory")
 		private String confirmpassword;
-		@NotNull
+		@NotEmpty(message="Age field is mandatory")
 		private String age;
 }

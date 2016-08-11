@@ -21,7 +21,8 @@
       <li><a href="about">About</a></li>
       <li><a href="contact">Contact</a>
       <li><a href="rt">Signup</a></li>
-      <li><a href="Prodview">ViewProduct</a></li>
+      <li><a href="Prodview">ViewProduct</a>
+      <li><a href="up">upload</a></li>
     </ul>
   </div>
 </nav>

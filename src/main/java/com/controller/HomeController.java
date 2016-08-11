@@ -14,7 +14,7 @@ import com.service.LoginService;
 @Controller
 public class HomeController {
 
-	@Autowired(required=true)
+	@Autowired(required=true)//inject the object dependency
 	LoginService ls;
 	
 	@RequestMapping("/")
@@ -46,7 +46,6 @@ public class HomeController {
 	public String getfrontpage(){
 		return "frontpage";
 	}
-	
 	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public ModelAndView loginuser(@RequestParam("name") String name,@RequestParam("pwd") String pwd){
